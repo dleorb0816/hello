@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<input type="button" value="버튼" style="background-color: yellow;"  onclick="alert('메시지')">
+	<br>
+	<input type="button" value="버튼2" id="btn2">
+	<br>
+	<input type="button" value="버튼3" id="btn3">
+	<br>
+	<input type="button" value="버튼4" id="btn4">
+	<br>
+	<input type="button" value="버튼5" id="btn5">
+	<br>
+	<input type="text" name = "na" onchange="func1();">
+	<br>
+	<input type="text" name = "na2" onkeyup="func2();">
+
+
+<script>
+function func1() {
+	alert('입력값이 변경 됐을떄');
+}
+//func1(): 실행코드(호출)
+function func2() {
+	alert('키 눌렀다 뗐을때');
+}
+</script>
+
+	
+<script>
+	// GUI(Graphic User Interface) : 그래픽기반 유저 인터페이스
+	// 이벤트 : 사용자 또는 프로그램 자체적으로 발생시키는 사건.
+	//          발생하면 특정 대상에 신호를 줌.
+	// 이벤트 핸들러 : 이벤트를 처리하는 함수 정의.
+	//                 신호를 받으면 연결된 함수의 명령문을 실행함.
+	// 이벤트 소스 : 이벤트가 발생된 대상 (버튼 등).
+	//               이벤트 핸들러를 등록하는 대상이 됨.
+	
+	// document는 브라우저가 로딩한 문서정보를 가진 문서객체이다.
+	
+	//이벤트 종류
+	//click dblclick	클릭은 클릭을하고 땔때까지 같은영역일때만 클릭으로 쳐준다.
+	//mousedown mouseup mouseover mouseout mousemove 
+	//dragndrop
+	//keydown keypress(문자출력과 관련됬을때만 발생) keyup
+	//focus blur(포커스가 옮겨가서 기존의 포커스가 해제됬을때) select change(값이 이전과 비교해서 변경됬는지 안됬는지 확인할떄 사용)
+	
+	
+	
+	var btn2 = document.getElementById('btn2');
+
+	console.log(typeof btn2); // object
+	
+	btn2.addEventListener('click', function () {
+		alert('메시지2');
+	});
+	
+	
+	function funcDblclick() {
+		alert('더블클릭됨');//리턴이 아니라 동작
+	}
+	
+	var valueDblclick = function () {
+		alert('더블클릭됨');//리턴이 아니라 동작
+	};
+	
+	
+	var btn3 = document.querySelector('#btn3');
+	btn3.addEventListener('dblclick'/*이벤트 이름*/, funcDblclick);//위에껄 생략해도 실행은 되는데 btn3이 아이디 속성이라서 그렇다
+																	//그럼에도 위에줄을 써주는 이유는 옛날 브라우저에도 지원을 하게해줄려고
+													//함수 값을 넘겨주는거라서 변수 넘기듯이 뒤에()생략하고 넘겨줌
+													//만약 지정된변수에 들어가는 함수
+													//뒤에()를 붙이려면 함수안에 리턴값이 있어야됨.
+	
+	var btn4 = document.querySelector('#btn4');
+	btn4.addEventListener('dblclick', valueDblclick);
+	
+	
+</script>
+</body>
+</html>
+
+
+
+
+

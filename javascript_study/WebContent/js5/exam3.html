@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width: 400px;
+	}
+</style>
+</head>
+<body>
+<div id="app">
+	<input type="button" value="버튼" id="btn">
+	<br>
+	<img src="../images/hobbang.jpeg" >
+	<img src="../images/sikbbang.jpg">
+	<img src="../images/segyun.jpg">
+</div>
+<script src="../js/jquery-3.5.1.js"></script><!-- 같은 경로에 있을때 jquery로딩 방법 -->
+<script>
+	$('#btn').on('click',function (){
+		//속성을 다루는 함수 attr()  prop()
+		//attr() : 웹디자이너 관점에서 사용
+		//prop() : 웹프로그래머 관점에서 사용
+		
+		let str = $('img').attr('src');//../images/hobbang.jpeg (getter)
+		console.log(str);
+		
+		str = $('img').prop('src');//http://localhost/javascript_study/images/hobbang.jpeg (getter)
+		console.log(str);
+		
+// 		$('img').attr('width', 200);//강사님이 확인해본다고 함
+		
+		//====================
+			
+// 		$('img').css('width', '200px');
+		
+// 		$('img').css('width', function (index) {//여기서는 index를 다른걸로 바꾸면 안되나?
+// 			//return '200px';
+// 			return (index+1) *100+'px';
+// 		});
+		
+// 1	$('img').css('width','200px').css('height','300px');
+
+		//옵션객체 { K:V, K:V, K:V} (1이나 아래나 같음)
+		//객체의 키값은 문자열이 아니다!
+		$('img').css({
+			width: '200px',
+			height: '300px'
+		});
+		
+	});
+</script>
+</body>
+</html>

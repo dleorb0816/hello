@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	// 가장 바깥에 선언된 함수(여기서는 func1())들만 먼저
+	// 스캔해서 메모리에 로딩함(호이스팅)
+	// 어떤 함수가 호출되면 그안에 함수를 먼저 한번 스캔을 한다.
+	// (어떤함수 있는지 파악해서 func2가 밑에 정의되있어도 위에서 출력가능함)
+	
+	var num = 10;//메인 안에서만 살아남는 지역변수
+	
+	func1();	//실행되는 이유: 메인을 한번 스캔하면 func1을 먼저 스캔을 해서 실행이 가능함
+	
+	function func1(){
+		alert('func1() 호출됨');
+		
+		var num2 = 20;//func1 이 끝나면 사라지는 지역변수
+		
+		func2();//밑에 선언되있는데 호출가능함
+		
+		
+		
+		function func2() {
+			alert('func2() 호출됨');
+			var num3 = 30;//func2 이 끝나면 사라지는 지역변수
+		} //func2()
+	}
+</script>
+</body>
+</html>

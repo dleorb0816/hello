@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	//함수 : 자주쓰는 실행문들을 하나의 기능단위로 정의한 것.
+	//		 필요할때 함수 이름을 호출해서 사용함.
+	//	     리턴형은 없음
+	
+	// 자바스크립트에서 함수정의는 브라우저에 의해 
+	// 최우선적으로 메모리에 로딩된다.(가장먼저 스캔됨)
+
+	
+	//하나의 함수정의 완성됨
+	//자바스크립트 함수정의에서는 매개변수에 자료형을 적어주면 안됨
+	//함수정의는 아무데나 선언해도 다 로딩됨.
+	function star() {
+		console.log('★★★★★★★★★★★')
+	}
+	function printNum(num){	//매개변수가 n개이면 최대 n개까지 받음(안받기도 가능)
+		console.log('printNum() 호출됨')
+		console.log(num);
+	}
+	function getStar(){
+		return '★별★'
+	}
+	function sum(a,b){
+		return a + b;
+	}
+	
+	//함수(정의)를 리턴하는 함수
+	function func1(){
+		// ...
+		var a = function () { //변수에 저장하는 정도라면 함수의 이름은 안써도 된다
+			alert('hello world!')
+		}; 
+		
+		return a;
+	}	
+
+	function func2(){
+		// ...
+
+		return function () { //변수에 저장하는 정도라면 함수의 이름은 안써도 된다
+			alert('hello world!2')
+		};
+	}
+		
+	
+	function func3(func){
+		// ....
+		func();//매개변수가 받아온거 출력
+	}
+	
+// 	function func1(){	//이름 같은게 두개가 오면 먼저 읽은걸 덮어쓰고 맨마지막에 있는 놈으로 인식함
+//						//(자바)메서드 오버라이딩 개념
+//				// ...
+//			var a = function () { //변수에 저장하는 정도라면 함수의 이름은 안써도 된다
+//				alert('hello world!')
+//			}; 
+
+//		return a;
+//}
+
+	var b = func1();
+	b();	//여기서 메시지 창이 뜬다.(호출)
+	
+	var c = func2();
+	c();
+	
+	func2()();//첫번째 ()는 func2를호출해서 리턴된 function정의가 오고
+			//	두번째 ()는 호출해서 출력하는것
+			//var c = func2();
+			//c(); 이거 두줄이랑 동일한 의미이다
+		
+			
+			
+	func3(function () { //익명함수 정의해서 바로 출력하기
+		alert('메시지 출력')
+		});
+	
+			
+	function func4(func){
+		// ...
+		func();
+	}		
+	
+	func4(()=>{ alert('메시지 출력2')}); //자바의 람다식과 의미 동일함
+			
+	//func3(star);
+			
+
+			
+	
+	// 	printNum();	
+	//printNum(10);
+	
+	sum(1,2,3)
+	
+// 	star();
+// 	printNum(100);
+	
+// 	let str = getStar();
+// 	console.log(str);
+// 	let result = sum(10,20);
+// 	console.log(result);
+	
+</script>
+</body>
+</html>

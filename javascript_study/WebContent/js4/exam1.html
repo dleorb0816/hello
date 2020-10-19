@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+	//배열 (가변크기. 자바의 리스트 컬렉션 개념임)
+	var arr = [10,20,30];
+	
+	// 객체 (가변크기. 자바의 맵 컬렉션(k,v) 개념임)
+	var myCar = {
+		model : "520d",
+		speed : 60,
+		color :"red",
+		brake: function(){ 
+			this.speed -= 10;
+		},//이미 brake라는 이름이 있어서 이름없는 함수로 정의해줘야됨
+		accel: function(){
+			this.speed += 10;
+		}	//this(내부참조 변수)는 객체 자기 자신을 가리킴 
+	};//a:d a=객체의 구성요소 이름 d=
+	
+	myCar.color = "yellow";
+	myCar.brake();
+	
+	console.log(myCar.color);
+	console.log(myCar.speed);
+	
+	myCar.door = 4;//자바에선 에러지만 js에서는 객체에 접근해서 변수추가 가능함
+	console.log(myCar.door);
+</script>
+</body>
+</html>
+
+
+
+
+

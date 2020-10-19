@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>열린창</h1>
+	<hr>
+	
+	<form action="" name= "frm">
+		<input type="text" id="id" name = "id" placeholder="아이디를 입력하세요.">
+		<input type="button" value = "확인" onclick="func()">
+	</form>
+
+<script>
+//현재는 자식창이다.
+function func() {
+	//document.getElementById('id');
+	//document.frm.id.value
+	//window.opener.document.frm.id.value = frm.id.value;
+	opener.document.frm.id/*부모상자의 아이디 입력상자를 찾았다는 말이다*/.value = frm/*액션 name frm*/.id/*name="id"*/.value/*사용자 입력값*/;
+							// name속성으로 찾아가는 과정임
+	//(opener.document.frm.id.value = frm.id.value;)
+	close();
+}
+</script>
+</body>
+</html>

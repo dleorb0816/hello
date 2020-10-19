@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+<div id="app">
+	<input type="button" value="버튼" id ="btn"><br>
+	<div></div>
+	<div></div>
+	<div></div>
+	<h1>heading-0</h1>
+	<h1>heading-1</h1>
+	<h1>heading-2</h1>
+</div>
+<script src="../js/jquery-3.5.1.js"></script><!-- 같은 경로에 있을때 jquery로딩 방법 -->
+<script>
+	$('#btn').on('click',function() {
+		// text()	html()
+		
+		let str = $('h1').text();	//보이는 그대로 출력
+		console.log('text() : ' + str);//text() : heading-0heading-1heading-2
+		
+		str = $('h1').html();// 태그형식이 있으면 살아서 들어간다
+		console.log('html() : ' + str);//html() : heading-0
+		
+// 		$('div').not('#app').text('<h2>text method</h2>');	//''내용 그대로 텍스트취급해서 출력
+// 		$('div').not('#app').html('<h2>html method</h2>');	//태그가 적용되서 출력됨 (not이 뭐라고?)=id가 app인 div는 제외
+		
+// 		$('div').not('#app').html(function (index) {
+// 			return '<h2>html method - '+index+'</h2>';
+// 		});//의미에 맞게 index사용
+		
+// 		$('h1').html(function (index, oldHtml) {
+// 			return '★' + oldHtml + '★';
+// 		});//의미에 맞게 index사용
+	})//on은 이벤트 연결 함수
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+	border: 3px solid black;
+	margin: 5px;
+	padding: 5px;
+}
+
+h1{
+	cursor:pointer; 
+}
+</style>
+</head>
+<body>
+<div id="app">
+	<h1>
+		<a href="http://naver.com">네이버</a>
+	</h1>
+</div>
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+	//a 클릭 css() background-color를 blue
+	$('a').on('click',function(event) {
+		$(this).css('background-color','blue');//this는 이벤트안에서 자기자신을 지정할떄 사용
+		
+		//현재 태그요소의 기본기능 막기(a태그는 하이퍼링크 기능 막기)
+// 		event.preventDefault();
+		
+		//이벤트 전파 막기(태그가 포함관계로 겹쳐있을 경우)
+// 		event.stopPropagation();
+		
+		return false;//기본기능과 이벤트 전파 모두 막기.위어꺼 두개 합친기능
+
+	});
+	//h1을 클릭 css()함수 이용해서 background-color를 red
+	$('h1').on('click',function() {
+		$(this).css('background-color','red');//this는 이벤트안에서 자기자신을 지정할떄 사용
+	});
+		//a태그는 주소 요청
+		//form태그의 submit버튼은 action속성으로 요청
+</script>
+</body>
+</html>
