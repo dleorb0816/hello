@@ -18,11 +18,12 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.ex05_06);
         //setContentView(R.layout.ex05_07);
         //setContentView(R.layout.ex05_10);
-        setContentView(R.layout.ex05_11);
+        //setContentView(R.layout.ex05_11);
         //setContentView(R.layout.ex05_12);
         //setContentView(R.layout.ex05_13);
         //setContentView(R.layout.ex05_14);
         //setContentView(R.layout.ex05_18);
+        setContentView(R.layout.ex05_19);
 
 
     }
