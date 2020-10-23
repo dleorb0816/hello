@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+section {
+	border: 1px solid red;
+}
+</style>
+</head>
+<body>
+<div id="app">
+	<input type="button" value="버튼" id="btn">
+	<section></section>
+</div>
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+
+	function process(data) {
+		let str = '';
+		
+		// find()는 전체문서 기준으로 person 태그요소 찾기
+		// person 태그 여러개가 배열리스트로 리턴됨.
+		$(data).find('person').each(function () {//each함수가 일종의 반복문과 비슷함
+			//this는 각각의 person태그가 됨
+			let name = $(this).find('name').text();	//xml.jsp에서 name태그의 내용을 가져옴
+			let gender = $(this).find('gender').text();
+			let age = $(this).find('age').text();
+			
+			str += '<h2>' + name + ' : ' + gender + ' : ' + age;
+		});
+		
+		$('section').html(str);
+		
+		
+	} // process()
+
+	$('#btn').click(function () {
+		
+		$.ajax({//AJAX함수(블로킹 메소드가 아님) 제이쿼리.ajax
+			url: 'xml.jsp',//요청할 url주소
+			success: function (data){//요청하면 응답을 받는데 응답이 성공했을때의 경우
+				console.log(typeof data);
+				console.log(data);
+				
+				process(data);	
+			}
+		});
+		
+		//다른실행문;위에가 블로킹 함수면 위에서 실행흐름이 걸려있어서 위가 다 실행될때까지 기다려서 실행이 안됨(동기식)
+		//			위에가 비동기식이면 위에서 딜레이가 일어나도 아래에있는 이 실행문이 실행이 된다 스레드랑 비슷함
+	});
+</script>
+</body>
+</html>
+
+
