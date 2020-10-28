@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+<div id="app">
+	<input type="button" value="버튼" id="btn">
+	<table border="1">
+		<thead>
+			<tr>
+				<th>아이디</th><th>이름</th><th>나이</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</div>
+<script src="../js/jquery-3.5.1.js"></script>
+
+
+<script>
+	function process(list){
+		let str = '';
+		
+		for(let item of list){//item은 변수이름
+			//백틱(Backtick `)
+			str +=`
+				<tr>
+					<td>${item.id}</td>
+					<td>${item.name}</td>
+					<td>${item.age}</td>
+				</tr>
+			`;
+			
+		}//for
+		
+// 		$.each(list, function(index, item) {//반복적으로 실행
+			
+// // 			str += '<tr>';
+// // 			str += '	<td> '+item.name+'</td>';
+// // 			str += '	<td> '+item.gender+'</td>';
+// // 			str += '	<td> '+item.age+'</td>';
+// // 			str += '</tr>';
+			
+// 			//백틱(Backtick `)
+// 			str +=`
+// 				<tr>
+// 					<td>${item.id}</td>
+// 					<td>${item.name}</td>
+// 					<td>${item.age}</td>
+// 				</tr>
+// 			`;
+// 		});
+		
+		$('tbody').html(str);
+	}
+
+	$('#btn').click(function () {
+		
+		$.ajax({//비동기 자바 네트워크 통신 기술
+			url: 'json4.jsp',
+			success: function (data) {
+				console.log(typeof data);
+				console.log(data);
+				
+				process(data);
+			}
+		});
+		
+	});
+	//ajax쓰기전에는 버튼클릭하면 새로운 페이지를 받아와서 갱신 해줬어야 됬는데 쓰고난 이후부터는 새로운 페이지를
+	//안받고 데이터 받아오는식으로 페이지 갱신함
+</script>
+</body>
+</html>
+
+
