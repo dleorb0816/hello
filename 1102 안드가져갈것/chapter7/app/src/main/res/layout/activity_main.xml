@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/firstBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="first">
+
+    </Button>
+
+    <Button
+        android:id="@+id/secondBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예제7-6">
+
+    </Button>
+
+    <Button
+        android:id="@+id/thirdBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="직접7-1">
+    </Button>
+
+    <Button
+        android:id="@+id/fourthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="실습7-2">
+
+    </Button>
+
+    <Button
+        android:id="@+id/fifthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="직접7-2">
+    </Button>
+
+    <Button
+        android:id="@+id/sixthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예제7-12"/>
+
+    <Button
+        android:id="@+id/seventhBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예제7-14"/>
+
+    <Button
+        android:id="@+id/eighthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예제7-18"/>
+
+    <Button
+        android:id="@+id/ninthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="실습 7-3"/>
+
+    <Button
+        android:id="@+id/tenthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="직접 7-3"/>
+</LinearLayout>
+</ScrollView>
