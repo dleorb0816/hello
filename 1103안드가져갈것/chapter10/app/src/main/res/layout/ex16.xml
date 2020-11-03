@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+>
+
+    <EditText
+        android:id="@+id/edtNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edtNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RadioButton
+        android:id="@+id/addRdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더하기">
+
+    </RadioButton>
+    <RadioButton
+        android:id="@+id/subRdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="빼기">
+
+    </RadioButton>
+    <RadioButton
+        android:id="@+id/mulRdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="곱하기">
+
+    </RadioButton>
+    <RadioButton
+        android:id="@+id/divRdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나누기">
+
+    </RadioButton>
+
+
+</RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnNewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="더하기"/>
+</LinearLayout>
