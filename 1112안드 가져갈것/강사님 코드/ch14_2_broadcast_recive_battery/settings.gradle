@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "ch14_2_broadcast_recive_battery"
